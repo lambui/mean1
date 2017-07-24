@@ -1,0 +1,22 @@
+{
+  "name": "mean1",
+  "version": "1.0.0",
+  "description": "mean stack website 1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "body-parser": "*",
+    "jsonwebtoken": "*", 
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "PhthaloBlue",
+  "license": "ISC"
+}
