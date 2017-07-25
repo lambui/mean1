@@ -34,6 +34,11 @@ app.use(express.static(path.join(__dirname, "public")));
 //body parser middleware
 app.use(bodyparser.json());
 
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
+
 //define routes
 app.use("/users", users);
 
