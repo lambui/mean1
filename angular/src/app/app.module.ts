@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
@@ -10,12 +11,18 @@ import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.
 import { AppProfileComponent } from './components/app-profile/app-profile.component';
 import { AppRegisterComponent } from './components/app-register/app-register.component';
 
+//Service imports
+import { AppInputValidateService } from './services/app-input-validate/app-input-validate.service';
+
 //Module imports
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
+    FlashMessagesModule,
     AppRoutingModule
   ],
   declarations: [
@@ -27,7 +34,7 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
     AppRegisterComponent
   ],
   providers: [
-
+    AppInputValidateService
   ],
   bootstrap: [AppComponent]
 })
