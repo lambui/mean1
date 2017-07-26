@@ -13,10 +13,13 @@
     "bcryptjs": "*",
     "cors": "*",
     "body-parser": "*",
-    "jsonwebtoken": "*", 
+    "jsonwebtoken": "*",
     "passport": "*",
     "passport-jwt": "*"
   },
   "author": "PhthaloBlue",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.2.4"
+  }
 }
