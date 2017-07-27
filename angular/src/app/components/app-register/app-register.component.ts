@@ -1,6 +1,8 @@
+import { AppAuthService } from '../../services/app-auth/app-auth.service';
 import { AppInputValidateService } from '../../services/app-input-validate/app-input-validate.service';
 import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +18,9 @@ export class AppRegisterComponent implements OnInit
 
   constructor(
     private inputValidateService: AppInputValidateService,
-    private flashMessagesService: FlashMessagesService
+    private authService: AppAuthService,
+    private flashMessagesService: FlashMessagesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -38,7 +42,18 @@ export class AppRegisterComponent implements OnInit
       return;
     }
 
-    this.flashMessagesService.show("registering...");
+    this.authService.RegisterUser(user)
+                    .subscribe(data => {
+                      if(data.success)
+                      {
+                        this.flashMessagesService.show("user registered: " + user.username);
+                        this.router.navigate(['/']);
+                      }
+                      else
+                      {
+                        this.flashMessagesService.show("fail to register");
+                        this.router.navigate(['/register']);
+                      }  
+                    });
   }
-
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
-
 
 //Component imports
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { AppRegisterComponent } from './components/app-register/app-register.com
 
 //Service imports
 import { AppInputValidateService } from './services/app-input-validate/app-input-validate.service';
+import { AppAuthService } from './services/app-auth/app-auth.service';
 
 //Module imports
 import { FlashMessagesModule } from 'angular2-flash-messages';
@@ -21,6 +22,7 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     FlashMessagesModule,
     AppRoutingModule
@@ -34,7 +36,8 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
     AppRegisterComponent
   ],
   providers: [
-    AppInputValidateService
+    AppInputValidateService,
+    AppAuthService
   ],
   bootstrap: [AppComponent]
 })
