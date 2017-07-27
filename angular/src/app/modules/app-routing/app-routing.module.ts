@@ -1,3 +1,4 @@
+import { AppAuthGuardService } from '../../services/app-auth-guard/app-auth-guard.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,7 +11,7 @@ const appRoutes: Routes = [
   { path: '', component: AppDashboardComponent },
   { path: 'login', component: AppLoginComponent },
   { path: 'register', component: AppRegisterComponent },
-  { path: 'profile', component: AppProfileComponent },
+  { path: 'profile', component: AppProfileComponent, canActivate: [AppAuthGuardService] },
 ]
 
 @NgModule({

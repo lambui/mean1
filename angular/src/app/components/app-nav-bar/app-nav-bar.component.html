@@ -1,6 +1,6 @@
 <ul>
   <a routerLink='/login' >login</a>
   <a routerLink='/register' >register</a>
-  <a routerLink='/profile' >profile</a>
-  <a routerLink='/dashboard' >dashboard</a>
+  <a *ngIf='this.authService.LoggedIn()' routerLink='/profile' >profile</a>
+  <a *ngIf='this.authService.LoggedIn()' routerLink='/dashboard' >dashboard</a>
 </ul>

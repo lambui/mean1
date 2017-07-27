@@ -38,7 +38,7 @@ export class AppLoginComponent implements OnInit {
                       }
                       else
                       {
-                        this.flashMessagesService.show("successfully login as " + data.user.username);
+                        this.flashMessagesService.show("successfully login as " + user.username);
                         this.authService.StoreUserData(data.token, data.user);
                         this.router.navigate(['/']);
                       }
